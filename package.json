@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "projet n3 opc",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaeladev/OPCohmyfood.git"
+  },
+  "author": "rafaela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaeladev/OPCohmyfood/issues"
+  },
+  "homepage": "https://github.com/rafaeladev/OPCohmyfood#readme"
+}
