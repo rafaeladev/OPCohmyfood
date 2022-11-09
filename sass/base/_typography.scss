@@ -1,16 +1,62 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap'); /*font-family: 'Shrikhand', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /*font-family: 'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body,p {
     font-family: 'Roboto', sans-serif;
-    color: $colour-primary;
-    font-size: 2rem;
+    color: darken($colour-white,70%);
+    font-size: 1.2rem;
     font-weight: 100;
-    line-height: 1.7;
+}
+
+p{
+    line-height: 1.4rem;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
+    /*logo title*/
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+h2 {
+    /*pages title*/
+    font-family: 'Shrikhand', cursive;
+    font-size: 2.5rem;
+}
+
+h3{
+    /*section titles*/
     font-weight: 900;
-    font-size: 5rem;
-    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 32px;
+    color:$colour-black;
+}
+
+h4{
+    /*location name*/
+    font-size:1rem;
+    font-weight: 600;
+    margin:1rem 0;
+}
+
+h6{
+    /*numbers*/
+    font-size:0.8rem;
+    font-weight: 200;
+    margin:1rem 0;
+    color:$colour-white;
+    display:inline;
+}
+
+
+span{
+    /*fonctionnement text*/
+    font-size:1rem;
+    font-weight: 600;
+    margin:1rem 0;
+    color:$colour-black;
 }
 
 textarea {
@@ -21,7 +67,6 @@ textarea {
 
 button {
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: 2.75rem;
+    font-weight: 100;
+    font-size: 1rem;
 }

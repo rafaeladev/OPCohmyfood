@@ -1,0 +1,12 @@
+.header{
+    background-color: $colour-white;
+    color:$colour-black;
+    padding: 0.7rem 0 0.5rem 0;
+    margin:auto;
+    text-align: center;
+    &__logo{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @include shadow;
+}

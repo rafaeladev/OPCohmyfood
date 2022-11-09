@@ -2,6 +2,7 @@
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";
+@import "./utils/maps";
 
 @import "./base/base";
 @import "./base/typography";
@@ -13,7 +14,7 @@
 @import "./layout/container";
 @import "./layout/footer";
 
-
+@import "./pages/index";
 @import "./pages/menu1";
 @import "./pages/menu2";
 @import "./pages/menu3";

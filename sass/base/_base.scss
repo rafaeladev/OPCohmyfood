@@ -1,9 +1,17 @@
-html {
+html,p {
     // 10px div by def of 16px
-    font-size: 62.5%;
+    font-size: 16px;
 }
 
 body {
-    box-sizing: border-box;
-    background: $colour-secondary;
+    margin:0;
+    background-color: $colour-background;
+}
+
+.page{
+    padding:0 $layout-margin;
+}
+
+li{
+    list-style: none;
 }
