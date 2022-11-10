@@ -1,7 +1,9 @@
-@function lightness-shift($colour) {
-    @if (lightness($colour) < 25%){
-        @return lighten($colour, 10%);
+/* *************************** fonction création échelles de gris  *************************** */
+@function gray-colors($colour,$parameter) {
+    @if ($colour == $colour-black){
+        @return lighten($colour, $parameter);
     }@else{
-        @return darken($colour, 10%);
+        @return darken($colour, $parameter);
     }
 }
+
