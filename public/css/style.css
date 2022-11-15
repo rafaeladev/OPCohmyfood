@@ -1,5 +1,14 @@
 @charset "UTF-8";
 /*#353535;*/
+/*$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay * 2;
+$load-padding:0.25rem;
+$load-height:3rem;
+$bar-height: $load-height - $load-padding * 5;
+
+$mint: #15dea5;
+$navy: #022f40;*/
 /* *************************** fonction création échelles de gris  *************************** */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -13,10 +22,9 @@ body {
   background-color: #eaeaea;
 }
 
-.page {
-  padding: 0 1.5rem;
-}
-
+/*.page{
+    padding:0 $layout-margin;
+}*/
 li {
   list-style: none;
 }
@@ -65,7 +73,7 @@ h4 {
 
 h6 {
   /*numbers*/
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 200;
   margin: 1rem 0;
   color: #fff;
@@ -92,10 +100,14 @@ button {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   border-radius: 1.5rem;
   color: #fff;
-  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   border: 0;
   padding: 0.9rem 1.4rem;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
@@ -106,6 +118,75 @@ button {
   background: linear-gradient(180deg, rgba(255, 121, 218, 0.8) 0%, rgba(147, 86, 220, 0.8) 100%);
 }
 
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    transform: scaleX(0.81);
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.load-container {
+  margin: 0;
+  display: flex;
+  padding-top: 40vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.load-container .progress {
+  width: 80vw;
+  height: 2vw;
+  border: 2px solid #4d4d4d;
+  height: 3rem;
+  padding: 0.25rem;
+  margin-bottom: 30px;
+}
+.load-container .progress__bar {
+  height: 3rem;
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  transform-origin: left;
+  transform: scaleX(0.5);
+  animation: progress-bar 1000ms 150ms both;
+}
+
+.page {
+  animation: pages 200ms 1300ms both;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  /*padding:0 $layout-margin;*/
+}
+
+@keyframes pages {
+  0% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 0.3;
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    opacity: 0.5;
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .header {
   background-color: #fff;
   color: black;
@@ -142,7 +223,7 @@ button {
 .heading__content {
   background-color: #f7f7f7;
   padding: 2.5rem 1.5rem;
-  /* *************************** bouton *************************** */
+  /* *************************** boutton *************************** */
 }
 .heading__content h3 {
   padding: 0 1.5rem;
@@ -153,7 +234,7 @@ button {
   margin: 0.5rem 0;
   border-radius: 1.5rem;
   color: #fff;
-  background: linear-gradient(180deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
   border: 0;
   padding: 0.9rem 1.4rem;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
@@ -165,14 +246,15 @@ button {
 }
 
 /* *************************** section Fonctionnement *************************** */
-.content {
+.description {
   padding: 50px 1.5rem;
   background: #fff;
 }
-.content h3 {
+.description h3 {
   margin: 0px;
 }
-.content__menu {
+.description__menu {
+  cursor: pointer;
   display: flex;
   align-items: center;
   position: relative;
@@ -182,32 +264,45 @@ button {
   padding: 0.8rem 1.4rem;
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
 }
-.content__menu i {
+.description__menu i {
   color: gray;
   margin: 0 1.5rem 0 1rem;
 }
-.content__menu__number {
+.description__menu__number {
   position: absolute;
   background-color: #9356DC;
-  border-radius: 2rem;
-  padding: 0.3rem 0.45rem 0.2rem 0.45rem;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  left: 0%;
+  top: 50%;
   margin: 0px;
-  right: calc(100% - 1px);
-  top: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.content__menu:hover {
+.description__menu:hover {
   background-color: rgba(147, 86, 220, 0.1);
 }
 
-.rest {
+.container {
   padding: 2rem 1.5rem;
   background-color: #f7f7f7;
+  /* @include tablette-only{
+       width:80%;
+   }*/
 }
-.rest h3 {
+.container h3 {
   margin: 0;
 }
-.rest__card {
-  height: 280px;
+.container button:active + .progress > .progress__bar {
+  transform: scaleX(1);
+}
+
+.card {
+  height: 250px;
   margin: 1rem 0;
   background-color: #fff;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
@@ -217,16 +312,26 @@ button {
   align-items: flex-start;
   justify-content: space-between;
   overflow: hidden;
+  /* @include tablette-only{
+       flex-direction: row;
+       flex-wrap: wrap;
+   }*/
 }
-.rest__card img {
+.card img {
   object-fit: cover;
-  transform: scale(1.2);
+  /*transform:scale(1.2);*/
   border-radius: 15px 15px 0 0;
   width: 100%;
-  height: 65%;
+  height: 80%;
   overflow: hidden;
+  /*transition: transform 400ms;*/
 }
-.rest__card__title {
+.card img:hover {
+  /*transform: scale(1.15);*/
+  overflow: hidden;
+  height: 80%;
+}
+.card__title {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -236,12 +341,12 @@ button {
   color: black;
   font-size: 1.1rem;
 }
-.rest__card__txt h3 {
+.card__txt h3 {
   font-size: 1.1rem;
 }
-.rest__card__content {
-  margin: 10px;
-  width: 90%;
+.card__content {
+  padding: 10px 15px;
+  width: 88%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -249,12 +354,31 @@ button {
   color: black;
   font-size: 1.1rem;
 }
-.rest__card__content i {
+.card__content i {
   margin-top: 1.2rem;
   display: inline-block;
 }
-.rest__card p {
+.card p {
   margin: auto;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*position:relative;*/
+}
+.icon-heart {
+  position: absolute;
+}
+.icon-heart__full {
+  color: #FF79DA;
+  transform: scale(0);
+  transition: transform 300ms ease-in-out;
+}
+.icon:hover > .icon-heart__full {
+  transform: scale(1);
 }
 
 /* *************************** Page footer ***************************  */

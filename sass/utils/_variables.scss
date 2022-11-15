@@ -6,7 +6,7 @@ $colour-black: black;
 $colour-background : #eaeaea;
 $colour-gray:#4d4d4d; /*#353535;*/
 
-$cd-btn-start: linear-gradient(180deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+$cd-btn-start: linear-gradient(180deg, $colour-secondary 0%, $colour-primary 100%);
 $cd-btn-end:linear-gradient(180deg, rgba(255,121,218,0.8) 0%, rgba(147,86,220,0.8) 100%);
 
 $layout-margin: 1.5rem;
@@ -15,3 +15,14 @@ $heading-shadow-size2: 2px;
 
 
 $card-padding: 1rem;
+
+//animations variables
+/*$prog-bar-dur: 1000ms;
+$prog-bar-delay: 150ms;
+$cat-delay: $prog-bar-dur + $prog-bar-delay * 2;
+$load-padding:0.25rem;
+$load-height:3rem;
+$bar-height: $load-height - $load-padding * 5;
+
+$mint: #15dea5;
+$navy: #022f40;*/

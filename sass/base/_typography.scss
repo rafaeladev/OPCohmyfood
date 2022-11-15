@@ -44,7 +44,7 @@ h4{
 
 h6{
     /*numbers*/
-    font-size:0.8rem;
+    font-size:0.9rem;
     font-weight: 200;
     margin:1rem 0;
     color:$colour-white;
@@ -70,4 +70,8 @@ button {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 1rem;
+}
+
+a{
+    text-decoration: none;
 }
