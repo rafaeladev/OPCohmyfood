@@ -1,12 +1,22 @@
 .header{
     background-color: $colour-white;
     color:$colour-black;
-    padding: 0.7rem 0 0.5rem 0;
+    padding: 1.2em;
     margin:auto;
     text-align: center;
+    @include flex(row, center, space-between);
+    &__btn{
+        & a{
+                color: $colour-black;
+            }
+        & a:hover{
+            color: $colour-accent;
+        }
+    }
     &__logo{
-        margin-top: 0;
-        margin-bottom: 0;
+        margin:auto;
+        width:150px;
+        color:$colour-black;
     }
     @include shadow;
 }

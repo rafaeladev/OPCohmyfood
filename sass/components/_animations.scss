@@ -1,5 +1,4 @@
-$mint: #15dea5;
-$navy: #022f40;
+/* ******************aniamtion progess bar****************** */
 
 @keyframes progress-bar {
 	0% {
@@ -25,7 +24,7 @@ $prog-bar-dur: 1000ms;
 $prog-bar-delay: 150ms;
 $page-delay: $prog-bar-dur + $prog-bar-delay * 2;
 $load-padding:0.25rem;
-$load-height:3rem;
+$load-height:1rem;
 $bar-height: $load-height ;
 .load-container {
 	margin:0;
@@ -38,7 +37,7 @@ $bar-height: $load-height ;
 	.progress {
 		width: 80vw;
 		height: 2vw;
-		border: 2px solid $colour-gray;
+		border: 2px solid $colour-primary;
        	height:$load-height;
 		padding: $load-padding;
 		margin-bottom: 30px;
@@ -64,7 +63,7 @@ $bar-height: $load-height ;
 
 @keyframes pages {
 	0% {
-		opacity: 0;
+		opacity: 0.05;
 	}
 	24%{
 		opacity:0.3;
@@ -76,5 +75,19 @@ $bar-height: $load-height ;
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+/* ******************aniamtion menus****************** */
+
+
+@keyframes menus {
+	0% {
+		opacity:0;
+		transform: translateY(5px);
+	}
+	100% {
+		opacity:1;
+		transform: translateY(0);
 	}
 }

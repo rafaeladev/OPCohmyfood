@@ -14,39 +14,46 @@ p{
     line-height: 1.4rem;
 }
 
-h1 {
-    /*logo title*/
-    font-family: 'Shrikhand', cursive;
-    font-size: 1.9rem;
-    font-weight: 500;
+h1{
+    /*section titles*/
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 32px;
+    color:$colour-black;
 }
 
 h2 {
     /*pages title*/
     font-family: 'Shrikhand', cursive;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
 h3{
-    /*section titles*/
-    font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 32px;
-    color:$colour-black;
-}
-
-h4{
     /*location name*/
     font-size:1rem;
     font-weight: 600;
-    margin:1rem 0;
+    margin:0;
+}
+
+h4{
+    /*container name*/
+    font-size:1.5rem;
+    font-weight: 600;
+    margin:0;
+    color:$colour-black;
+}
+
+h5{
+    /*restaurant name*/
+    font-size:1.1rem;
+    font-weight: 600;
+    margin:0;
 }
 
 h6{
     /*numbers*/
     font-size:0.9rem;
     font-weight: 200;
-    margin:1rem 0;
     color:$colour-white;
     display:inline;
 }
@@ -56,7 +63,7 @@ span{
     /*fonctionnement text*/
     font-size:1rem;
     font-weight: 600;
-    margin:1rem 0;
+    margin:0;
     color:$colour-black;
 }
 

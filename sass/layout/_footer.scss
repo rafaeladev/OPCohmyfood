@@ -19,5 +19,22 @@
         font-size: 1rem;
         color: $colour-white;
         text-decoration: none;
+        &:hover {
+            color:$colour-accent;
+        }
+    }
+    &__ctn{
+        @include desktop-only{
+            max-width:$max-width;
+        }
+        @include tablette-desktop{
+            width:$width-desk;
+            margin-left:auto;
+            margin-right:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
     }
 }
