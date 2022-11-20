@@ -618,6 +618,9 @@ $block-anim-delay:240ms;*/
   height: 32px;
   position: relative;
 }
+.icon i {
+  line-height: 1em;
+}
 .icon-heart {
   width: 100%;
   height: 100%;
