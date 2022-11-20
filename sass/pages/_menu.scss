@@ -52,6 +52,7 @@ $menu-delay:300ms;
             right: 0;
             top: 0;
             height:100%;
+            //padding-right:80%;
             width:60px;
             transform: translateX(60px);
             transition: .5s ease-in-out; 
@@ -78,8 +79,8 @@ $menu-delay:300ms;
                     width: calc(100% - 90px);
                 }
                 &__price{
-                        transform: translateX(-60px);
-                    }  
+                    transform: translateX(-60px);
+                }  
             }
         }
 

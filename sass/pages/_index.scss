@@ -107,23 +107,33 @@
     height:32px;
     position:relative;
     &-heart{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width:100%;
+        height:100%;
         position:absolute;
-        bottom:0%;
+        line-height: 1em;
+        transition: color 300ms ease-out;
+        top:0%;
         &__full{
-            position: absolute;
-            bottom:0%;
 
-            //background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
-            //-webkit-background-clip: text;
-            //-webkit-text-fill-color: transparent;
 
-            color:$colour-secondary;
+            background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            //color:$colour-secondary;
             transform: scale(0);
-            transition: transform 300ms ease-in-out;
+            transition: transform 300ms ease-out;
             //transition: transform 300ms, -webkit-transform 300ms;
+
+        }
+        &::before{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display:block;
         }
     }
     &:hover {
@@ -131,14 +141,11 @@
             transform: scale(1);
         }
         .icon-heart{
-            color: $colour-primary;
+            color: darken($colour-primary,10%);
             //transition: background-color 300ms ease-in-out;
             //background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
             //background-clip: text;
             //color:transparent;
         }
-    }
-    & i {
-        height:16px;
     }
 }

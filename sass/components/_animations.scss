@@ -71,6 +71,7 @@ $anim-dur:500ms;
 			height: 2vh;
 			width: 2vh;
 			position:absolute;
+			
 			&--1{
 				left:0vh;
 				background-color:$colour-secondary;
@@ -79,16 +80,16 @@ $anim-dur:500ms;
 			&--2{
 				left:0vh;
 				background-color:$colour-secondary;
-				animation: load-bars-transl $anim-dur cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
+				animation: load-bars-trans1 $anim-dur cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 			}
 			&--3{
 				left:4vh;
-				background-color:$colour-secondary;
-				animation: load-bars-transl $anim-dur cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
+				background-color:$colour-primary;
+				animation: load-bars-trans2 $anim-dur cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 			}
 			&--4{
 				left:8vh;
-				background-color:$colour-secondary;
+				background-color:$colour-primary;
 				animation: load-bars-scal2 $anim-dur cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 			}
 		}
@@ -141,13 +142,28 @@ $anim-dur:500ms;
 }
 
 
-@keyframes load-bars-transl {
+@keyframes load-bars-trans1{
+    from{
+        transform: translate(0,0);
+		//background-color:$colour-secondary;
+		//transform: scale(0.6);
+    }
+    to{
+        transform: translate(4vh,0);
+		
+		//background-color:$colour-primary;
+    }
+}
+
+@keyframes load-bars-trans2{
     0% {
         transform: translate(0,0);
+		//background-color:$colour-primary;
 		//transform: scale(0.6);
     }
     100% {
         transform: translate(4vh,0);
+		//background-color:$colour-secondary;
     }
 }
 
