@@ -17,6 +17,7 @@ $menu-delay:300ms;
     }
     &__plats{
         overflow: hidden;
+        border-radius: 15px;
         position:relative;
         color:$colour-black;
         width:100%;
@@ -24,16 +25,24 @@ $menu-delay:300ms;
         padding:0.7em;
         &__txt{
             overflow: break-word;
+            width:calc(100% - 35px);
+            transition: width .5s ease-in-out;
             & h5{
                 margin-bottom:0.2em;
             }
             & p{
-
+                //width:90%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                //width:75%; /* some width */
+                margin:0;
             }
         }
         &__price{
             transform: translateX(0);
             transition: .5s ease-in-out; 
+            background-color: $colour-white;
         }
         &__check{
             position: absolute;
@@ -60,16 +69,13 @@ $menu-delay:300ms;
                 & i{
                     transform: rotate(360deg);
                 }
+                .menu_plats__txt{
+                   // width: calc(100% - 90px);
+                }
             }
             & .menu__plats{
                 &__txt{
-                    & p{
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        width:99%; /* some width */
-                        margin:0;
-                    }
+                    width: calc(100% - 90px);
                 }
                 &__price{
                         transform: translateX(-60px);

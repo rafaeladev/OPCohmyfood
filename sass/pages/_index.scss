@@ -103,28 +103,42 @@
 
 .icon{
     cursor: pointer;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    width:32px;
+    height:32px;
     position:relative;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    /*position:relative;*/
     &-heart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position:absolute;
+        bottom:0%;
         &__full{
-            //position: absolute;
-            background: linear-gradient(180deg, $colour-secondary 0%, $colour-primary 100%);
+            position: absolute;
+            bottom:0%;
+
+            //background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
             //-webkit-background-clip: text;
-            //color: rgba(0,0,0,0);
             //-webkit-text-fill-color: transparent;
-            color:#FF79DA;
+
+            color:$colour-secondary;
             transform: scale(0);
             transition: transform 300ms ease-in-out;
             //transition: transform 300ms, -webkit-transform 300ms;
         }
     }
-    &:hover > .icon-heart__full {
-        transform: scale(1);
+    &:hover {
+        .icon-heart__full {
+            transform: scale(1);
+        }
+        .icon-heart{
+            color: $colour-primary;
+            //transition: background-color 300ms ease-in-out;
+            //background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
+            //background-clip: text;
+            //color:transparent;
+        }
+    }
+    & i {
+        height:16px;
     }
 }
