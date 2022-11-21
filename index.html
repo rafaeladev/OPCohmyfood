@@ -11,14 +11,11 @@
     </head> 
     <body>
         <div class="load-container">
-            <!--<div class="progress">
-                <div class="progress__bar"></div>
-            </div>-->
             <div class="load">
-                <div class="load__bar load__bar--1"></div>
-                <div class="load__bar load__bar--2"></div>
-                <div class="load__bar load__bar--3"></div>
-                <div class="load__bar load__bar--4"></div>
+                <div class="load__ball load__ball--1"></div>
+                <div class="load__ball load__ball--2"></div>
+                <div class="load__ball load__ball--3"></div>
+                <div class="load__ball load__ball--4"></div>
             </div>
         </div>
         <header class="header">
@@ -28,31 +25,31 @@
             <section class="heading">
                 <div class="heading__place">
                     <i class="fa-solid fa-location-dot fa-lg heading__icon"></i>
-                    <h3>Paris, Belleville</h3>
+                    <input type="text" value="Paris, Belleville" class="">
                 </div>
-                <div class="heading__content">
+                <div class="container container--space heading__ctn">
                     <h1>Réservez le menu qui vous convient</h1>
                     <p>Découvrez des restaurants d'exception, sélectionnés par nous soins.</p>
                     <button class="btn">Explorer nos restaurants</button>
                 </div>
             </section>
-            <section class="description">
-                <div class="description__ctn">
-                    <h4>Fonctionnement</h4>
-                    <div class="description__menu__block">
+            <section class="container container--space fonctionnement">
+                <div class="fonctionnement__ctn">
+                    <h3>Fonctionnement</h3>
+                    <div class="fonctionnement__opt__block">
                         <ul>
-                            <li class="description__menu">
-                                <h6 class="description__menu__number">1</h6>
+                            <li class="fonctionnement__opt">
+                                <h5 class="fonctionnement__opt__number">1</h6>
                                 <i class="fa-solid fa-mobile-screen-button fa-lg"></i>
                                 <span>Choissisez un restaurant</span>
                             </li>
-                            <li class="description__menu">
-                                <h6 class="description__menu__number">2</h6>
+                            <li class="fonctionnement__opt">
+                                <h5 class="fonctionnement__opt__number">2</h6>
                                 <i class="fa-solid fa-list fa-lg"></i>
                                 <span>Composez votre menu</span>
                             </li>
-                            <li class="description__menu">
-                                <h6 class="description__menu__number">3</h6>
+                            <li class="fonctionnement__opt">
+                                <h5 class="fonctionnement__opt__number">3</h6>
                                 <i class="fa-solid fa-store fa-lg"></i>
                                 <span>Dégustez au restaurant</span>
                             </li>
@@ -61,17 +58,17 @@
                 </div>
             </section>
 
-            <section class="container">
-                <div class="container__ctn">
-                    <h4>Restaurants</h4>
+            <section class="container container--space restaurants">
+                <div class="restaurants__ctn">
+                    <h3>Restaurants</h3>
                     <article class="card__block">
-                        <a href="./menu1.html">
+                        <a href="./la-palette-du-gout.html">
                             <div class="card">
                                 <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du gôut">
                                 <div class="card__new"><p>Nouveau</p></div>
-                                <div class="card__content">
+                                <div class="card__ctn">
                                     <div class="card__txt">
-                                        <h5>La palette du gôut</h5>
+                                        <h4>La palette du gôut</h4>
                                         <p>Ménilmontant</p>
                                     </div>
                                     <div class="icon">
@@ -81,13 +78,13 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./menu1.html">
+                        <a href="./la-note-enchantee.html">
                             <div class="card">
                                 <div class="card__new"><p>Nouveau</p></div>
-                                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantéet">
-                                <div class="card__content">
+                                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
+                                <div class="card__ctn">
                                     <div class="card__txt">
-                                        <h5>La note enchantée</h5>
+                                        <h4>La note enchantée</h4>
                                         <p>Charonne</p>
                                     </div>
                                     <div class="icon">
@@ -97,12 +94,12 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./menu1.html">
+                        <a href="./a-la-francaise.html">
                             <div class="card">
                                 <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
-                                <div class="card__content">
+                                <div class="card__ctn">
                                     <div class="card__txt">
-                                        <h5>À la française</h5>
+                                        <h4>À la française</h4>
                                         <p>Cité Rouge</p>
                                     </div>
                                     <div class="icon">
@@ -112,12 +109,12 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./menu1.html">
+                        <a href="./la-delice-des-sens.html">
                             <div class="card">
                                 <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="La décile des sens">
-                                <div class="card__content">
+                                <div class="card__ctn">
                                     <div class="card__txt">
-                                        <h5>La décile des sens</h5>
+                                        <h4>La décile des sens</h4>
                                         <p>Folie-Méricourt</p>
                                     </div>
                                     <div class="icon">
@@ -133,7 +130,7 @@
         </main>
         <footer class="footer">
             <div class="footer__ctn">
-                <h2>ohmyfood</h2>
+                <h6>ohmyfood</h6>
                 <div class="footer__link"> 
                     <i class="fa-solid fa-utensils"></i> 
                     <a href="#">Proposer un restaurant</a>
@@ -150,12 +147,5 @@
                 </div>
             </div>
         </footer>
-        <!--<div class="load">
-            <div class="load__bar load__bar--1"></div>
-            <div class="load__bar load__bar--2"></div>
-            <div class="load__bar load__bar--3"></div>
-            <div class="load__bar load__bar--4"></div>
-            <div class="load__bar load__bar--5"></div>
-        </div>-->
     </body>
 </html>

@@ -1,4 +1,4 @@
-/* *************************** fonction création échelles de gris  *************************** */
+// fonction création échelles de gris 
 @function gray-colors($colour,$parameter) {
     @if ($colour == $colour-black){
         @return lighten($colour, $parameter);

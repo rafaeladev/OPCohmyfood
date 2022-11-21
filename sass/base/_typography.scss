@@ -1,8 +1,9 @@
+/* *************************** Typography *************************** */
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap'); /*font-family: 'Shrikhand', cursive;*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /*font-family: 'Roboto', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-body,p {
+body,p,* {
     font-family: 'Roboto', sans-serif;
     color: darken($colour-white,70%);
     font-size: 1rem;
@@ -20,22 +21,17 @@ h1{
     font-size: 1.6rem;
     line-height: 32px;
     color:$colour-black;
+    margin:0.8em 0;
 }
 
 h2 {
     /*pages title*/
     font-family: 'Shrikhand', cursive;
     font-size: 1.8rem;
+    color:$colour-black;
 }
 
 h3{
-    /*location name*/
-    font-size:1rem;
-    font-weight: 600;
-    margin:0;
-}
-
-h4{
     /*container name*/
     font-size:1.5rem;
     font-weight: 600;
@@ -43,19 +39,29 @@ h4{
     color:$colour-black;
 }
 
-h5{
+h4{
     /*restaurant name*/
     font-size:1.1rem;
     font-weight: 600;
     margin:0;
+    color:$colour-black;
 }
 
-h6{
+h5{
     /*numbers*/
     font-size:0.9rem;
     font-weight: 200;
     color:$colour-white;
-    display:inline;
+    display:inline
+}
+
+h6{
+    /*footer titre ohmyfood*/
+    color:$colour-white;
+    font-family: 'Shrikhand', cursive;
+    font-size:1.2rem;
+    font-weight: 200;
+    margin:0.8em 0;
 }
 
 
@@ -68,14 +74,13 @@ span{
     color:$colour-black;
 }
 
-textarea {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    font-size: 2rem;
+input {
+    font-size:1rem;
+    font-weight: 600;
+    margin:0 0.5em;
 }
 
 button {
-    font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 1rem;
 }

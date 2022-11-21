@@ -4,36 +4,40 @@
     margin:auto;
     text-align: center;
     &__icon{
+        /* header icon location*/
         align-self: center;
     }
     &__place{
+        /* header location : icone + form */
         margin:auto;
-        margin-top:16px;
-        margin-bottom:16px;
-        @include flex(row,flex-end,center);
-        & h3{
-            margin-left:0.5em;
-        }
+        margin-top:1em;
+        margin-bottom:1em;
+        @include flex(row,center,center);
     }
-    &__content{
+    &__ctn{
+        /* header content : titre sute + duscription + btn */
         @include flex(column, center, center);
         background-color: gray-colors($colour-black,97%);
-        padding: 2.5rem 1.5rem;
         & p{
            margin:0;
            font-size: 1.1rem;
         }
     }
+    & input{
+         /* header form pour location */
+        background-color: transparent;
+        border:none;
+        text-align: center;
+        width:fit-content;
+        background-color: transparent;
+    }
 }
 
 /* *************************** section Fonctionnement *************************** */
-.description{
-    padding: 3em $layout-margin;
+.fonctionnement{
     background: $colour-white;
-    & h3{
-        margin:0px;
-    }
-    &__menu{
+    &__opt{
+        /* fonctionnement option */
         cursor: pointer;
         @include flex(row, center, flex-start);
         position:relative;
@@ -55,8 +59,9 @@
             }
         }
         &__number{
+             /* fonctionnement option number */
             position: absolute;
-            background-color: $colour-primary ;
+            background-color: $colour-primary;
             border-radius:50%;
             width:2em;
             height:2em;
@@ -74,6 +79,7 @@
     
         }
         &__block{
+            /* fonctionnement block d'options */
             @include tablette-desktop{
                 display:flex;
                 justify-content: space-between;
@@ -89,6 +95,8 @@
         }
     }
     &__ctn{
+        width:100%;
+        /* fonctionnement content : titre + block d'options */
         @include desktop-only{
             max-width:$max-width;
         }
@@ -100,55 +108,40 @@
     }
 }
 
-
-.icon{
-    i{
-        line-height: 1em;
+/* *************************** section Restaurants *************************** */
+.restaurants{
+    background-color: gray-colors($colour-black,97%) ;
+    padding-bottom :2em;
+    & a{
+        /*container links sur cards*/
+        @include tablette-desktop{
+            width:48%;
+        }
     }
-    cursor: pointer;
-    width:32px;
-    height:32px;
-    position:relative;
-    &-heart{
+    &__ctn{
+         /*block de cards + titre*/
         width:100%;
-        height:100%;
-        position:absolute;
-        line-height: 1em;
-        transition: color 300ms ease-out;
-        top:0%;
-        &__full{
-
-
-            background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            //color:$colour-secondary;
-            transform: scale(0);
-            transition: transform 300ms ease-out;
-            //transition: transform 300ms, -webkit-transform 300ms;
-
+        @include desktop-only{
+            max-width:$max-width;
         }
-        &::before{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            display:block;
+        @include tablette-desktop{
+            width:$width-desk;
+            margin-left:auto;
+            margin-right:auto;
+            @include flex(column, flex-start, flex-start);
         }
+        
     }
-    &:hover {
-        .icon-heart__full {
-            transform: scale(1);
-        }
-        .icon-heart{
-            color: darken($colour-primary,10%);
-            //transition: background-color 300ms ease-in-out;
-            //background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
-            //background-clip: text;
-            //color:transparent;
-        }
+    & button{
+        /*boutton dans le container menus*/
+        width:60%;
+    }
+    @include tablette-only{
+        width:100%;
+    }
+    @include desktop-only{
+        @include flex(row, center, space-between);
+        margin-left: auto;
+        margin-right:auto;
     }
 }

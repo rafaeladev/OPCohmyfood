@@ -1,3 +1,4 @@
+/* *************************** Layout Bases *************************** */
 html,p {
     // 10px div by def of 16px
     font-size: 16px;
@@ -8,15 +9,8 @@ body {
     background-color: $colour-background;
 }
 
-/*.page{
-    padding:0 $layout-margin;
-}*/
-
 li{
     list-style: none;
-}
-
-.page{
 }
 
 *{

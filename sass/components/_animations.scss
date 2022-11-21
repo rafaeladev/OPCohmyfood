@@ -30,6 +30,7 @@ $bar-height: $load-height ;
 $block-position:8px;
 $block-anim-delay:240ms;*/
 
+/* ******************animation loading spinner avec balls ****************** */
 $anim-dur:500ms;
 
 .load-container {
@@ -66,7 +67,7 @@ $anim-dur:500ms;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&__bar {
+		&__ball {
 			border-radius: 1em;
 			height: 2vh;
 			width: 2vh;
@@ -149,8 +150,7 @@ $anim-dur:500ms;
 		//transform: scale(0.6);
     }
     to{
-        transform: translate(4vh,0);
-		
+        transform: translate(4vh,0);	
 		//background-color:$colour-primary;
     }
 }
@@ -179,4 +179,56 @@ $anim-dur:500ms;
 		opacity:1;
 		transform: translateY(0);
 	}
+}
+
+/* ******************animation sur les coeurs****************** */
+
+.icon{
+    i{
+        /*donner height pour voir l'icone grandir*/
+		color:$colour-black;
+        line-height: 1em;
+    }
+    cursor: pointer;
+    /*dimmensions pour les icones*/
+    width:32px;
+    height:32px;
+    position:relative;
+    &-heart{
+        width:100%;
+        height:100%;
+        position:absolute;
+        line-height: 1em;
+        transition: color 300ms ease-out;
+        top:0%;
+        &__full{ 
+            background: linear-gradient(180deg, $colour-primary 0%, $colour-secondary 100%);
+            /*transformation de l'icone en texte*/
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            /*animation coeur qui grandit*/
+            transform: scale(0);
+            transition: transform 300ms ease-out;
+        }
+        &::before{
+            /*before c'est l'icone en element texte*/
+            width: 100%;
+            height: 100%;
+            @include flex(row, center, center);
+            text-align: center;
+            /*display block pour prendre toutes l'espace*/
+            display:block;
+        }
+    }
+    &:hover {
+        .icon-heart__full {
+            /*changement la scale du coeur*/
+            transform: scale(1);
+        }
+        .icon-heart{
+            /*changement de la couleur de la bodure du coeur*/
+            color: darken($colour-primary,10%);
+        }
+    }
 }

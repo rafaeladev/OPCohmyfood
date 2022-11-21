@@ -1,7 +1,9 @@
+//Mixin pour l'ombre de la barre header
 @mixin shadow($offset-x: 0,$offset-y: $shadow-size,$blur: $shadow-blur, $spread: $shadow-spread, $colour: $colour-black){
     box-shadow: $offset-x $offset-y $blur $spread rgba($color: $colour, $alpha: 0.1);
 }
 
+//Mixin pour les flex
 @mixin flex($direction: row, $align:center, $justify:center){
     display:flex;
     flex-direction:$direction;
@@ -9,6 +11,7 @@
     justify-content: $justify;
 }
 
+//Mixin pour le btn
 @mixin btn {
     @include flex(row,center,center);
     border-radius:1.5rem;
@@ -25,12 +28,7 @@
     }
 }
 
-@mixin mobile-only{
-    @media screen and (max-width: map-get($breakpoints, mobile)){
-        @content;
-    }
-}
-
+//Mixins pour le responsive
 @mixin tablette-only{
     @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
         @content;

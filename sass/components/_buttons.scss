@@ -1,3 +1,7 @@
+ /* *************************** boutton *************************** */
 .btn {
+    margin-top:2em;
+    margin-bottom:1.5em;
+    align-self: center;
     @include btn;
 }

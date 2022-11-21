@@ -1,17 +1,18 @@
+// CSS Variables
 
-/* **************** colors variables **************** */
+//  colors  
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-accent: #99E2D0;
 $colour-white: #fff;
 $colour-black: black;
 $colour-background : #eaeaea;
-$colour-gray:#4d4d4d; /*#353535;*/
+$colour-gray:#4d4d4d; 
 
 $cd-btn-start: linear-gradient(180deg, $colour-secondary 0%, $colour-primary 100%);
 $cd-btn-end:linear-gradient(180deg, rgba(255,121,218,0.8) 0%, rgba(147,86,220,0.8) 100%);
 
-/* **************** layout variables **************** */
+// layout
 $layout-margin: 1rem;
 $shadow-size: 2px;
 $shadow-blur: 2px;
@@ -19,6 +20,6 @@ $shadow-spread:0px;
 
 $card-padding: 1rem;
 
-/* **************** desktop version variables  **************** */
+// desktop version 
 $max-width:1400px;
 $width-desk:85%;

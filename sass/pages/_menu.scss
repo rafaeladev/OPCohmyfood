@@ -1,118 +1,14 @@
 $menu-dur:300ms;
 $menu-delay:300ms;
-.menu{
-    width:100%;
-    @include desktop-only{
-        width:32%;
-    }
-    @include tablette-only{
-        width:80%;
-    }
-    &__titre{
-        text-transform: uppercase;
-        margin-top:1em;
-        padding-bottom:0.5em ;
-        width:10%;
-        border-bottom: 2px solid $colour-accent;
-    }
-    &__plats{
-        overflow: hidden;
-        border-radius: 15px;
-        position:relative;
-        color:$colour-black;
-        width:100%;
-        @include flex (row, flex-end, space-between);
-        padding:0.7em;
-        &__txt{
-            overflow: break-word;
-            width:calc(100% - 35px);
-            transition: width .5s ease-in-out;
-            & h5{
-                margin-bottom:0.2em;
-            }
-            & p{
-                //width:90%;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                //width:75%; /* some width */
-                margin:0;
-            }
-        }
-        &__price{
-            transform: translateX(0);
-            transition: .5s ease-in-out; 
-            background-color: $colour-white;
-        }
-        &__check{
-            position: absolute;
-            background-color: #99e2d0;
-            color: #fff;
-            border-radius: 0 15px 15px 0;
-            right: 0;
-            top: 0;
-            height:100%;
-            //padding-right:80%;
-            width:60px;
-            transform: translateX(60px);
-            transition: .5s ease-in-out; 
-            & i{
-                position: absolute;
-                padding: 2px 4px;
-                right:25%;
-                top:50%;
-                transition: .5s ease-in-out; 
-            }
-        }
-        &:hover{
-            & .menu__plats__check{
-                transform: translateX(0);
-                & i{
-                    transform: rotate(360deg);
-                }
-                .menu_plats__txt{
-                   // width: calc(100% - 90px);
-                }
-            }
-            & .menu__plats{
-                &__txt{
-                    width: calc(100% - 90px);
-                }
-                &__price{
-                    transform: translateX(-60px);
-                }  
-            }
-        }
 
-    }
-    @for $i from 1 through 3{
-        &--anim-#{$i} {
-            animation : menus $menu-dur $menu-delay*$i ease-in-out both;
-        }
-    }
-    &__btn{
-        background-color:gray-colors($colour-black,97%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom:3em;
-        & button{
-            width:60%;
-            margin:0;
-            @include tablette-desktop{
-                width:20%;
-            }
-        }
-    }
-}
-
+/* ********************* Nom du restau ********************* */
 .rest{
-    &__titre{
+    width:100%;
+    &__name{
         border-radius: 40px 40px 0 0;
         background-color: gray-colors($colour-black,97%) ;
         position: relative;
         margin-top: -50px;
-        color:$colour-black;
         padding:2em 2em 1em $layout-margin;
         @include flex(row, center, space-between);
         & h2{
@@ -125,6 +21,15 @@ $menu-delay:300ms;
             justify-content: center;
         }
     }
+    @include desktop-only{
+        @include flex (row, flex-start, space-between);
+        max-width: $max-width;
+    }
+}
+
+/* ********************* Menu des restaux ********************* */
+.menu{
+    width:100%;
     &__img{
         & img{
             width: 100%;
@@ -132,12 +37,125 @@ $menu-delay:300ms;
             object-fit: cover;
         }   
     }
-}
+    &__page{
+        /*background color de la page des restaurants*/
+        background-color: gray-colors($colour-black,97%) ;
+    }
+    &__titre{
+        /*titre des menus : ENTREES-PLATS-DESSERTS*/
+        text-transform: uppercase;
+        margin-top:1em;
+        padding-bottom:0.5em ;
+        width:10%;
+        border-bottom: 2px solid $colour-accent;
+    }
+    &__ctn {
+        @include desktop-only{
+            width:32%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            //@include flex (column, flex-start, flex-start);
+        }
+    }
+    &__plats{
+        /*contenu texte des menus*/
+        overflow: hidden;
+        border-radius: 15px;
+        position:relative;
+        color:$colour-black;
+        width:100%;
+        @include flex (row, flex-end, space-between);
+        padding:0.7em;
+        &__txt{
+            /*nom + description des plats*/
+            overflow: break-word;
+            width:calc(100% - 35px);
+            transition: width .5s ease-in-out;
+            & h4{
+                margin-bottom:0.2em;
+            }
+            & p{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                margin:0;
+            }
+        }
+        &__price{
+            /*prix des plats*/
+            transform: translateX(0);
+            transition: .5s ease-in-out; 
+            background-color: $colour-white;
+        }
+        &__check{
+            /*div check verte pour les menus*/
+            position: absolute;
+            background-color: #99e2d0;
+            color: #fff;
+            border-radius: 0 15px 15px 0;
+            right: 0;
+            top: 0;
+            height:100%;
+            width:60px;
+            transform: translateX(60px);
+            transition: .5s ease-in-out; 
+            & i{
+                /*icone de la div check*/
+                color:$colour-white;
+                position: absolute;
+                padding: 2px 4px;
+                right:25%;
+                top:50%;
+                transition: .5s ease-in-out; 
+            }
+        }
+        &:hover{
+            & .menu__plats__check{
+                /*animation de la div verte qui apparait*/
+                transform: translateX(0);
+                & i{
+                     /*animation de l'icone check que tourne*/
+                    transform: rotate(360deg);
+                }
+            }
+            & .menu__plats{
+                &__txt{
+                    /*animation width de la div qui change*/
+                    width: calc(100% - 90px);
+                }
+                &__price{
+                    /*animation du prix qui translade vers la gauche*/
+                    transform: translateX(-60px);
+                }  
+            }
+        }
 
-.rest-img{
-    & img{
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
+    }
+    @for $i from 1 through 3{
+        /*animation des menus qui aparraisent*/
+        &--anim-#{$i} {
+            animation : menus $menu-dur $menu-delay*$i ease-out both;
+            margin-bottom: 2em;
+            @include desktop-only{
+                width:32%;
+            }
+        }
+    }
+
+    &__btn{
+        /*boutton commander menu*/
+        background-color:gray-colors($colour-black,97%);
+        @include flex (row, center, center);
+        padding-bottom:3em;
+        & button{
+            width:60%;
+            margin:0;
+            @include tablette-desktop{
+                margin-top:2em;
+                width:20%;
+            }
+        }
     }
 }

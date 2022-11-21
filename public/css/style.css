@@ -1,9 +1,5 @@
 @charset "UTF-8";
-/* **************** colors variables **************** */
-/*#353535;*/
-/* **************** layout variables **************** */
-/* **************** desktop version variables  **************** */
-/* *************************** fonction création échelles de gris  *************************** */
+/* *************************** Layout Bases *************************** */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
@@ -16,9 +12,6 @@ body {
   background-color: #eaeaea;
 }
 
-/*.page{
-    padding:0 $layout-margin;
-}*/
 li {
   list-style: none;
 }
@@ -27,9 +20,10 @@ li {
   box-sizing: border-box;
 }
 
+/* *************************** Typography *************************** */
 /*font-family: 'Shrikhand', cursive;*/
 /*font-family: 'Roboto', sans-serif;*/
-body, p {
+body, p, * {
   font-family: "Roboto", sans-serif;
   color: #4d4d4d;
   font-size: 1rem;
@@ -47,22 +41,17 @@ h1 {
   font-size: 1.6rem;
   line-height: 32px;
   color: black;
+  margin: 0.8em 0;
 }
 
 h2 {
   /*pages title*/
   font-family: "Shrikhand", cursive;
   font-size: 1.8rem;
+  color: black;
 }
 
 h3 {
-  /*location name*/
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-h4 {
   /*container name*/
   font-size: 1.5rem;
   font-weight: 600;
@@ -70,19 +59,29 @@ h4 {
   color: black;
 }
 
-h5 {
+h4 {
   /*restaurant name*/
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
+  color: black;
 }
 
-h6 {
+h5 {
   /*numbers*/
   font-size: 0.9rem;
   font-weight: 200;
   color: #fff;
   display: inline;
+}
+
+h6 {
+  /*footer titre ohmyfood*/
+  color: #fff;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0.8em 0;
 }
 
 span {
@@ -94,14 +93,13 @@ span {
   color: black;
 }
 
-textarea {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-size: 2rem;
+input {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0.5em;
 }
 
 button {
-  font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-size: 1rem;
 }
@@ -110,7 +108,11 @@ a {
   text-decoration: none;
 }
 
+/* *************************** boutton *************************** */
 .btn {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  align-self: center;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -158,6 +160,7 @@ $bar-height: $load-height ;
 
 $block-position:8px;
 $block-anim-delay:240ms;*/
+/* ******************animation loading spinner avec balls ****************** */
 .load-container {
   background-color: #f7f7f7;
   position: fixed;
@@ -193,28 +196,28 @@ $block-anim-delay:240ms;*/
   align-items: center;
   justify-content: center;
 }
-.load-container .load__bar {
+.load-container .load__ball {
   border-radius: 1em;
   height: 2vh;
   width: 2vh;
   position: absolute;
 }
-.load-container .load__bar--1 {
+.load-container .load__ball--1 {
   left: 0vh;
   background-color: #FF79DA;
   animation: load-bars-scal1 500ms cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 }
-.load-container .load__bar--2 {
+.load-container .load__ball--2 {
   left: 0vh;
   background-color: #FF79DA;
   animation: load-bars-trans1 500ms cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 }
-.load-container .load__bar--3 {
+.load-container .load__ball--3 {
   left: 4vh;
   background-color: #9356DC;
   animation: load-bars-trans2 500ms cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
 }
-.load-container .load__bar--4 {
+.load-container .load__ball--4 {
   left: 8vh;
   background-color: #9356DC;
   animation: load-bars-scal2 500ms cubic-bezier(0.5, 0, 0.5, 1) backwards infinite;
@@ -281,6 +284,58 @@ $block-anim-delay:240ms;*/
     transform: translateY(0);
   }
 }
+/* ******************animation sur les coeurs****************** */
+.icon {
+  cursor: pointer;
+  /*dimmensions pour les icones*/
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.icon i {
+  /*donner height pour voir l'icone grandir*/
+  color: black;
+  line-height: 1em;
+}
+.icon-heart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  line-height: 1em;
+  transition: color 300ms ease-out;
+  top: 0%;
+}
+.icon-heart__full {
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  /*transformation de l'icone en texte*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*animation coeur qui grandit*/
+  transform: scale(0);
+  transition: transform 300ms ease-out;
+}
+.icon-heart::before {
+  /*before c'est l'icone en element texte*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*display block pour prendre toutes l'espace*/
+  display: block;
+}
+.icon:hover .icon-heart__full {
+  /*changement la scale du coeur*/
+  transform: scale(1);
+}
+.icon:hover .icon-heart {
+  /*changement de la couleur de la bodure du coeur*/
+  color: #782cd3;
+}
+
+/* ********************* header ********************* */
 .header {
   background-color: #fff;
   color: black;
@@ -293,39 +348,16 @@ $block-anim-delay:240ms;*/
   justify-content: space-between;
   box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
-.header__btn a {
+.header__btn i {
   color: black;
 }
-.header__btn a:hover {
+.header__btn i:hover {
   color: #99E2D0;
 }
 .header__logo {
   margin: auto;
   width: 150px;
   color: black;
-}
-
-/* *************************** boutton *************************** */
-.btn {
-  margin-top: 2em;
-  margin-bottom: 1.5em;
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1.5rem;
-  color: #fff;
-  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
-  border: 0;
-  padding: 0.9rem 1.4rem;
-  box-shadow: 0px 6px 6px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: background-color 300ms 500ms;
-}
-.btn:hover {
-  background: linear-gradient(180deg, rgba(255, 121, 218, 0.8) 0%, rgba(147, 86, 220, 0.8) 100%);
-  box-shadow: 0px 6px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* ********************* cartes blanches ********************* */
@@ -340,56 +372,45 @@ $block-anim-delay:240ms;*/
   align-items: flex-start;
   justify-content: space-between;
 }
+.card__block {
+  /*block de cards pour responsive*/
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   .card__block {
     width: 100%;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
   }
 }
 .card img {
+  /*card image*/
   height: 180px;
   object-fit: cover;
   object-position: 50% 60%;
   border-radius: 15px 15px 0 0;
   width: 100%;
   overflow: hidden;
-  transition: 400ms ease-out;
-  /*transition: transform 400ms;*/
 }
-.card img:hover {
-  /*transform: scale(1.15);*/
-  overflow: hidden;
-}
-.card__title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-  color: black;
-  font-size: 1.1rem;
-}
-.card__txt {
-  margin: 0.2em 0;
-}
-.card__content {
+.card__ctn {
+  /*content des cards : txt + icone*/
   padding: 10px 15px;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  color: black;
   font-size: 1.1rem;
 }
-.card p {
-  margin: auto;
+.card__txt {
+  /*texte des cards*/
+  margin: 0.2em 0;
 }
 .card__new {
+  /*div nouveau verte*/
   background-color: #99E2D0;
   position: absolute;
   right: 5%;
@@ -398,97 +419,24 @@ $block-anim-delay:240ms;*/
   font-size: 0.8rem;
   border-radius: 0.1em;
   box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.1);
-}
-.card__new p {
-  color: rgb(11, 142, 110);
+  color: #1b6150;
 }
 .card:hover {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-.card:hover .menu__plats__check {
-  transform: translateX(0);
-}
-.card:hover .menu__plats__check i {
-  transform: rotate(360deg);
-}
-.card__check {
-  position: absolute;
-  background-color: #99E2D0;
-  color: #fff;
-  font-size: 20px;
-  padding: 22.5px 20px;
-  border-radius: 0 15px 15px 0;
-  right: 0;
-  top: 0;
-  transform: translateX(60px);
-  transition: 0.3s ease-in-out;
-}
 
 /* ********************* cointainer pages ********************* */
 .container {
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
-  background-color: #f7f7f7;
-  padding-bottom: 2em;
 }
-.container h4 {
-  padding-top: 2em;
-  margin: 0;
-  display: flex;
-}
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .container {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.container button:active + .progress > .progress__bar {
-  transform: scaleX(1);
-}
-@media screen and (min-width: 992px) {
-  .container a {
-    width: 48%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .container a {
-    width: 48%;
-  }
-}
-.container__ctn {
-  width: 100%;
-}
-@media screen and (min-width: 992px) {
-  .container__ctn {
-    max-width: 1400px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container__ctn {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-}
-.container button {
-  width: 60%;
+.container--space {
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 /* *************************** contenu d'en tête juste après le header *************************** */
@@ -498,42 +446,46 @@ $block-anim-delay:240ms;*/
   text-align: center;
 }
 .heading__icon {
+  /* header icon location*/
   align-self: center;
 }
 .heading__place {
+  /* header location : icone + form */
   margin: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
-.heading__place h3 {
-  margin-left: 0.5em;
-}
-.heading__content {
+.heading__ctn {
+  /* header content : titre sute + duscription + btn */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f7f7f7;
-  padding: 2.5rem 1.5rem;
 }
-.heading__content p {
+.heading__ctn p {
   margin: 0;
   font-size: 1.1rem;
 }
+.heading input {
+  /* header form pour location */
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  width: fit-content;
+  background-color: transparent;
+}
 
 /* *************************** section Fonctionnement *************************** */
-.description {
-  padding: 3em 1rem;
+.fonctionnement {
   background: #fff;
 }
-.description h3 {
-  margin: 0px;
-}
-.description__menu {
+.fonctionnement__opt {
+  /* fonctionnement option */
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -548,21 +500,22 @@ $block-anim-delay:240ms;*/
   box-shadow: 0px 8px 8px 1px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 768px) {
-  .description__menu {
+  .fonctionnement__opt {
     width: 28%;
   }
 }
-.description__menu i {
+.fonctionnement__opt i {
   color: gray;
   margin: 1.5em;
   width: 1em;
 }
 @media screen and (min-width: 768px) {
-  .description__menu i {
+  .fonctionnement__opt i {
     margin: 1em;
   }
 }
-.description__menu__number {
+.fonctionnement__opt__number {
+  /* fonctionnement option number */
   position: absolute;
   background-color: #9356DC;
   border-radius: 50%;
@@ -577,102 +530,174 @@ $block-anim-delay:240ms;*/
   align-items: center;
   justify-content: center;
 }
-.description__menu:hover {
+.fonctionnement__opt:hover {
   background-color: rgba(147, 86, 220, 0.1);
 }
-.description__menu:hover i {
+.fonctionnement__opt:hover i {
   color: #9356DC;
 }
+.fonctionnement__opt__block {
+  /* fonctionnement block d'options */
+}
 @media screen and (min-width: 768px) {
-  .description__menu__block {
+  .fonctionnement__opt__block {
     display: flex;
     justify-content: space-between;
   }
 }
-.description__menu__block ul {
+.fonctionnement__opt__block ul {
   padding-left: 0;
 }
 @media screen and (min-width: 768px) {
-  .description__menu__block ul {
+  .fonctionnement__opt__block ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
 }
+.fonctionnement__ctn {
+  width: 100%;
+  /* fonctionnement content : titre + block d'options */
+}
 @media screen and (min-width: 992px) {
-  .description__ctn {
+  .fonctionnement__ctn {
     max-width: 1400px;
   }
 }
 @media screen and (min-width: 768px) {
-  .description__ctn {
+  .fonctionnement__ctn {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.icon {
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  position: relative;
+/* *************************** section Restaurants *************************** */
+.restaurants {
+  background-color: #f7f7f7;
+  padding-bottom: 2em;
 }
-.icon i {
-  line-height: 1em;
+.restaurants a {
+  /*container links sur cards*/
 }
-.icon-heart {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  line-height: 1em;
-  transition: color 300ms ease-out;
-  top: 0%;
+@media screen and (min-width: 768px) {
+  .restaurants a {
+    width: 48%;
+  }
 }
-.icon-heart__full {
-  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(0);
-  transition: transform 300ms ease-out;
-}
-.icon-heart::before {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: block;
-}
-.icon:hover .icon-heart__full {
-  transform: scale(1);
-}
-.icon:hover .icon-heart {
-  color: #782cd3;
-}
-
-.menu {
+.restaurants__ctn {
+  /*block de cards + titre*/
   width: 100%;
 }
 @media screen and (min-width: 992px) {
-  .menu {
-    width: 32%;
+  .restaurants__ctn {
+    max-width: 1400px;
   }
+}
+@media screen and (min-width: 768px) {
+  .restaurants__ctn {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+.restaurants button {
+  /*boutton dans le container menus*/
+  width: 60%;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .menu {
-    width: 80%;
+  .restaurants {
+    width: 100%;
   }
 }
+@media screen and (min-width: 992px) {
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ********************* Nom du restau ********************* */
+.rest {
+  width: 100%;
+}
+.rest__name {
+  border-radius: 40px 40px 0 0;
+  background-color: #f7f7f7;
+  position: relative;
+  margin-top: -50px;
+  padding: 2em 2em 1em 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.rest__name h2 {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .rest__name h2 {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .rest__name {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .rest {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1400px;
+  }
+}
+
+/* ********************* Menu des restaux ********************* */
+.menu {
+  width: 100%;
+  /*animation des menus qui aparraisent*/
+  /*animation des menus qui aparraisent*/
+  /*animation des menus qui aparraisent*/
+}
+.menu__img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.menu__page {
+  /*background color de la page des restaurants*/
+  background-color: #f7f7f7;
+}
 .menu__titre {
+  /*titre des menus : ENTREES-PLATS-DESSERTS*/
   text-transform: uppercase;
   margin-top: 1em;
   padding-bottom: 0.5em;
   width: 10%;
   border-bottom: 2px solid #99E2D0;
 }
+@media screen and (min-width: 992px) {
+  .menu__ctn {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
 .menu__plats {
+  /*contenu texte des menus*/
   overflow: hidden;
   border-radius: 15px;
   position: relative;
@@ -685,11 +710,12 @@ $block-anim-delay:240ms;*/
   padding: 0.7em;
 }
 .menu__plats__txt {
+  /*nom + description des plats*/
   overflow: break-word;
   width: calc(100% - 35px);
   transition: width 0.5s ease-in-out;
 }
-.menu__plats__txt h5 {
+.menu__plats__txt h4 {
   margin-bottom: 0.2em;
 }
 .menu__plats__txt p {
@@ -699,11 +725,13 @@ $block-anim-delay:240ms;*/
   margin: 0;
 }
 .menu__plats__price {
+  /*prix des plats*/
   transform: translateX(0);
   transition: 0.5s ease-in-out;
   background-color: #fff;
 }
 .menu__plats__check {
+  /*div check verte pour les menus*/
   position: absolute;
   background-color: #99e2d0;
   color: #fff;
@@ -716,6 +744,8 @@ $block-anim-delay:240ms;*/
   transition: 0.5s ease-in-out;
 }
 .menu__plats__check i {
+  /*icone de la div check*/
+  color: #fff;
   position: absolute;
   padding: 2px 4px;
   right: 25%;
@@ -723,29 +753,53 @@ $block-anim-delay:240ms;*/
   transition: 0.5s ease-in-out;
 }
 .menu__plats:hover .menu__plats__check {
+  /*animation de la div verte qui apparait*/
   transform: translateX(0);
 }
 .menu__plats:hover .menu__plats__check i {
+  /*animation de l'icone check que tourne*/
   transform: rotate(360deg);
 }
 .menu__plats:hover .menu__plats__txt {
+  /*animation width de la div qui change*/
   width: calc(100% - 90px);
 }
 .menu__plats:hover .menu__plats__price {
+  /*animation du prix qui translade vers la gauche*/
   transform: translateX(-60px);
 }
 .menu--anim-1 {
-  animation: menus 300ms 300ms ease-in-out both;
+  animation: menus 300ms 300ms ease-out both;
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 992px) {
+  .menu--anim-1 {
+    width: 32%;
+  }
 }
 .menu--anim-2 {
-  animation: menus 300ms 600ms ease-in-out both;
+  animation: menus 300ms 600ms ease-out both;
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 992px) {
+  .menu--anim-2 {
+    width: 32%;
+  }
 }
 .menu--anim-3 {
-  animation: menus 300ms 900ms ease-in-out both;
+  animation: menus 300ms 900ms ease-out both;
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 992px) {
+  .menu--anim-3 {
+    width: 32%;
+  }
 }
 .menu__btn {
+  /*boutton commander menu*/
   background-color: #f7f7f7;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-bottom: 3em;
@@ -756,45 +810,9 @@ $block-anim-delay:240ms;*/
 }
 @media screen and (min-width: 768px) {
   .menu__btn button {
+    margin-top: 2em;
     width: 20%;
   }
-}
-
-.rest__titre {
-  border-radius: 40px 40px 0 0;
-  background-color: #f7f7f7;
-  position: relative;
-  margin-top: -50px;
-  color: black;
-  padding: 2em 2em 1em 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.rest__titre h2 {
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .rest__titre h2 {
-    margin-right: 40px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .rest__titre {
-    justify-content: center;
-  }
-}
-.rest__img img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.rest-img img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
 }
 
 /* *************************** Page footer ***************************  */
@@ -807,11 +825,8 @@ $block-anim-delay:240ms;*/
   color: #fff;
   padding: 0.5rem 1rem 1.5rem 1rem;
 }
-.footer h2 {
-  font-size: 1.2rem;
-  font-weight: 200;
-}
 .footer__link {
+  /*footer link class = icone + lien*/
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -820,14 +835,17 @@ $block-anim-delay:240ms;*/
 }
 .footer i {
   margin-right: 1rem;
+  color: #fff;
 }
 .footer a {
   font-size: 1rem;
   color: #fff;
-  text-decoration: none;
 }
 .footer a:hover {
   color: #99E2D0;
+}
+.footer__ctn {
+  /*footer block pour responsive*/
 }
 @media screen and (min-width: 992px) {
   .footer__ctn {
