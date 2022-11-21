@@ -1,4 +1,3 @@
-# OPCohmyfood
 <h2>Projet OpenClassrooms n3 :</h2>
 
 <img src="https://rafaeladev.github.io/OPCohmyfood/images/logo/ohmyfood-white.png" alt="Logo Ohmyfood">
