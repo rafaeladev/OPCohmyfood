@@ -38,4 +38,6 @@
   </ul>
 
 <h3>🟣 Rendu du site</h3>
+<a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank">Lien vers le site</a>
+
 <a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank"><img src="https://rafaeladev.github.io/OPCohmyfood/images/screencapture-rafaeladev-github-io-OPCohmyfood-index-html-2022-11-21-17_52_44.png" alt="Rendu du site"></a>
