@@ -1,7 +1,6 @@
-# OPCohmyfood
 <h2>Projet OpenClassrooms n3 :</h2>
 
-<img src="https://rafaeladev.github.io/OPCohmyfood/images/logo/ohmyfood.png" alt="Logo Ohmyfood">
+<img src="https://rafaeladev.github.io/OPCohmyfood/images/logo/ohmyfood-white.png" alt="Logo Ohmyfood">
 
 <h3>🟣 Identité</h3>
 <p>Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte!</p>
@@ -37,6 +36,9 @@
     <li>Sur la page d’accueil, il contient le logo du site.</li>
     <li>Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil.</li>
   </ul>
+
+<h3>🟣 Lien</h3>
+<a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank">Ohmyfood</a>
 
 <h3>🟣 Rendu du site</h3>
 <a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank"><img src="https://rafaeladev.github.io/OPCohmyfood/images/screencapture-rafaeladev-github-io-OPCohmyfood-index-html-2022-11-21-17_52_44.png" alt="Rendu du site"></a>
