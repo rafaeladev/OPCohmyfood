@@ -54,12 +54,12 @@ $menu-delay:300ms;
     }
     &__ctn {
         @include desktop-only{
+            /*container des menus pour desktop only*/
             width:32%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            //@include flex (column, flex-start, flex-start);
         }
     }
     &__plats{
@@ -136,7 +136,6 @@ $menu-delay:300ms;
 
     }
     @for $i from 1 through 3{
-        /*animation des menus qui aparraisent*/
         &--anim-#{$i} {
             animation : menus $menu-dur $menu-delay*$i ease-out both;
             margin-bottom: 2em;

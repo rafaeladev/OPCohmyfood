@@ -21,11 +21,12 @@
         }
     }
     &__ctn{
-        /*footer block pour responsive*/
         @include desktop-only{
+            /*footer block pour responsive desktop*/
             max-width:$max-width;
         }
         @include tablette-desktop{
+            /*footer block pour responsive desktop et tablette*/
             width:$width-desk;
             margin-left:auto;
             margin-right:auto;

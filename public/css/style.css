@@ -662,9 +662,6 @@ $block-anim-delay:240ms;*/
 /* ********************* Menu des restaux ********************* */
 .menu {
   width: 100%;
-  /*animation des menus qui aparraisent*/
-  /*animation des menus qui aparraisent*/
-  /*animation des menus qui aparraisent*/
 }
 .menu__img img {
   width: 100%;
@@ -685,6 +682,7 @@ $block-anim-delay:240ms;*/
 }
 @media screen and (min-width: 992px) {
   .menu__ctn {
+    /*container des menus pour desktop only*/
     width: 32%;
     display: flex;
     flex-direction: column;
@@ -839,16 +837,15 @@ $block-anim-delay:240ms;*/
 .footer a:hover {
   color: #99E2D0;
 }
-.footer__ctn {
-  /*footer block pour responsive*/
-}
 @media screen and (min-width: 992px) {
   .footer__ctn {
+    /*footer block pour responsive desktop*/
     max-width: 1400px;
   }
 }
 @media screen and (min-width: 768px) {
   .footer__ctn {
+    /*footer block pour responsive desktop et tablette*/
     width: 85%;
     margin-left: auto;
     margin-right: auto;
