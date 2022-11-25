@@ -37,7 +37,8 @@
     <li>Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil.</li>
   </ul>
 
-<h3>🟣 Rendu du site</h3>
+<h3>🟣 Lien</h3>
 <a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank">Lien vers le site</a>
 
+<h3>🟣 Rendu du site</h3>
 <a href="https://rafaeladev.github.io/OPCohmyfood/" target="_blank"><img src="https://rafaeladev.github.io/OPCohmyfood/images/screencapture-rafaeladev-github-io-OPCohmyfood-index-html-2022-11-21-17_52_44.png" alt="Rendu du site"></a>
