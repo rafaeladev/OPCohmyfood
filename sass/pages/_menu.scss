@@ -11,7 +11,10 @@ $menu-delay:300ms;
         margin-top: -50px;
         padding:2em 2em 1em $layout-margin;
         @include flex(row, center, space-between);
-        & h2{
+        & h1{
+            font-family: 'Shrikhand', cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
             margin:0;
             @include tablette-desktop{
                 margin-right: 40px;
@@ -70,10 +73,9 @@ $menu-delay:300ms;
         padding:0.7em;
         &__txt{
             /*nom + description des plats*/
-            overflow: break-word;
             width:calc(100% - 35px);
             transition: width .5s ease-in-out;
-            & h4{
+            & h3{
                 margin-bottom:0.2em;
             }
             & p{

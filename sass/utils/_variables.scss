@@ -9,8 +9,15 @@ $colour-black: black;
 $colour-background : #eaeaea;
 $colour-gray:#4d4d4d; 
 
+//couleur du boutton
 $cd-btn-start: linear-gradient(180deg, $colour-secondary 0%, $colour-primary 100%);
-$cd-btn-end:linear-gradient(180deg, rgba(255,121,218,0.8) 0%, rgba(147,86,220,0.8) 100%);
+
+//eclaicir couleurs pour le boutton
+$cd-btn-cprimary:lighten($colour-primary,5);
+$cd-btn-csecondary:lighten($colour-secondary,5);
+
+//colour du boutton hover
+$cd-btn-end:linear-gradient(180deg, $cd-btn-csecondary 0%, $cd-btn-cprimary 100%);
 
 // layout
 $layout-margin: 1rem;

@@ -24,14 +24,7 @@ h1{
     margin:0.8em 0;
 }
 
-h2 {
-    /*pages title*/
-    font-family: 'Shrikhand', cursive;
-    font-size: 1.8rem;
-    color:$colour-black;
-}
-
-h3{
+h2{
     /*container name*/
     font-size:1.5rem;
     font-weight: 600;
@@ -39,7 +32,7 @@ h3{
     color:$colour-black;
 }
 
-h4{
+h3{
     /*restaurant name*/
     font-size:1.1rem;
     font-weight: 600;
@@ -47,7 +40,7 @@ h4{
     color:$colour-black;
 }
 
-h5{
+h4{
     /*numbers*/
     font-size:0.9rem;
     font-weight: 200;
@@ -55,7 +48,7 @@ h5{
     display:inline
 }
 
-h6{
+h5{
     /*footer titre ohmyfood*/
     color:$colour-white;
     font-family: 'Shrikhand', cursive;
